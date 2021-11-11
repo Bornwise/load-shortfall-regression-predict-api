@@ -15,7 +15,7 @@ import pickle
 from sklearn.ensemble import RandomForestRegressor
 
 # Fetch training data and preprocess for modeling
-train = pd.read_csv('df_train.csv')
+train = pd.read_csv('./data/df_train.csv')
 
 train_y = train[['load_shortfall_3h']]
 train_X = train[['Madrid_wind_speed','Bilbao_rain_1h','Valencia_wind_speed']]
@@ -26,6 +26,6 @@ print ("Training Model...")
 randomfor = randomfor.fit(train_X,train_y)
 
 # Pickle model for use within our API
-save_path = 'assets/trained-models/randomfor_model.pkl'
+save_path = '../assets/trained-models/load_shortfall_simple_lm_regression.pkl'
 print (f"Training completed. Saving model to: {save_path}")
 pickle.dump(randomfor, open(save_path,'wb'))
