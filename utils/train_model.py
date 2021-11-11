@@ -26,6 +26,6 @@ print ("Training Model...")
 randomfor = randomfor.fit(train_X,train_y)
 
 # Pickle model for use within our API
-save_path = '../assets/trained-models/load_shortfall_simple_lm_regression.pkl'
+save_path = '../assets/trained-models/randomfor_model.pkl'
 print (f"Training completed. Saving model to: {save_path}")
 pickle.dump(randomfor, open(save_path,'wb'))
